@@ -1,280 +1,1324 @@
-<!doctype html>
-<html lang="en">    
-<head>    
-<meta charset="utf-8">    
-<meta name="viewport" content="width=device-width,initial-scale=1">    
-<title>Santosh Rai | Pro MMA Fighter</title>    
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santosh Rai | Pro MMA Fighter · Lucknow, UP</title>
+<meta name="description" content="Santosh Rai — Professional MMA Fighter from Lucknow, UP. Expert in Muay Thai, Kickboxing, Boxing & BJJ. Book personal training sessions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {    
-  --bg: #0b0b0b;    
-  --card: #1b1b1b;    
-  --accent: #d4af37;    
-  --highlight: #ffdd55;    
-  --muted: #b0a990;    
-  --light: #f3f4f6;
-  --glow-dark: rgba(212,175,55,0.2);
-}
-•⁠  ⁠{ margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Poppins', sans-serif; background:var(--bg); color:var(--light); scroll-behavior: smooth; overflow-x:hidden; }    
-header { position:sticky; top:0; background:#0a0a0a; display:flex; justify-content:space-between; align-items:center; padding:15px 30px; z-index:100; border-bottom:1px solid #222; box-shadow:0 4px 20px rgba(0,0,0,0.6); }
-
-#scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: var(--highlight);
-  z-index: 101;
-  box-shadow: 0 0 10px var(--highlight), 0 0 20px var(--highlight);
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  --black:    #080808;
+  --charcoal: #111111;
+  --card:     #161616;
+  --red:      #C8102E;
+  --red-lt:   #E8192E;
+  --red-glow: rgba(200,16,46,0.15);
+  --cream:    #F5F0E8;
+  --muted:    #6a6a6a;
+  --border:   rgba(255,255,255,0.06);
 }
 
-.logo-area { display:flex; align-items:center; gap:12px; }    
-.logo-area img { width:50px; height:50px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); transition: transform 0.3s ease-out; }
-.logo-area img:hover { transform: scale(1.1) rotate(-5deg); }
-.logo { font-size:1.9rem; font-weight:700; color:var(--accent); letter-spacing:1px; animation: logoPulse 4s infinite alternate; }
-@keyframes logoPulse { 0% { text-shadow: 0 0 5px var(--glow-dark); } 100% { text-shadow: 0 0 20px var(--accent), 0 0 30px rgba(212,175,55,0.4); } }
-nav a { color:var(--muted); margin-left:25px; text-decoration:none; font-weight:500; transition:0.3s; }    
-nav a:hover, nav a.active { color:var(--highlight); text-shadow: 0 0 8px rgba(255, 221, 85, 0.8); }
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--black);
+  color: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
 
-.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; padding:60px 30px; text-align:center; background:linear-gradient(135deg,#111 0%,#1a1a1a 100%); position:relative; overflow:hidden; }
-.hero::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle at 20% 30%, rgba(212,175,55,0.15), transparent 70%); z-index:0; }
-.hero-text { max-width:500px; position:relative; z-index:1; animation:fadeInUp 1s ease-out; }
-.hero-text h1 { font-size:3.2rem; color:var(--accent); margin-bottom:10px; font-weight:700; text-shadow: 0 0 10px rgba(212,175,55,0.6); }
-.hero-text h2 { font-size:1.6rem; color:var(--light); margin-bottom:20px; letter-spacing:1px; font-weight:500; }
-.hero-text p { color:var(--muted); line-height:1.7; margin-bottom:30px; }
-.highlight-btn { padding:18px 36px; background:var(--highlight); border:none; color:#0b0b0b; border-radius:12px; font-size:1.2rem; font-weight:700; cursor:pointer; transition:0.4s; box-shadow:0 0 25px rgba(255,221,85,0.7); }
-.highlight-btn:hover { transform:scale(1.08) rotate(-1deg); box-shadow:0 0 55px var(--highlight), 0 0 10px var(--highlight); }
-.hero img { width:400px; border-radius:16px; box-shadow:0 0 30px rgba(212,175,55,0.5); transition:0.5s; position:relative; z-index:1; }
-.hero img:hover { transform:scale(1.05) rotate(1deg); box-shadow:0 0 50px rgba(212,175,55,0.8); }
+/* ============================================================
+   SHARED TYPOGRAPHIC PATTERNS
+   ============================================================ */
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.section-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem,5vw,5rem);
+  color: var(--cream);
+  text-align: center;
+  line-height: 1;
+}
+.section-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--red);
+  margin: 16px auto 52px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-.section { padding:90px 20px; max-width:1200px; margin:auto; text-align:center; opacity:0; transform:translateY(50px); transition: all 0.8s ease; }
-.section.visible { opacity:1; transform:translateY(0); }
-.section h2 { font-size:2.4rem; color:var(--accent); margin-bottom:15px; position:relative; display:inline-block; text-shadow: 0 0 10px rgba(212,175,55,0.4); }
-.section h2::after { content:''; display:block; width:70px; height:3px; background:var(--accent); margin:8px auto; border-radius:2px; }
-.section p { color:var(--muted); line-height:1.8; max-width:700px; margin:10px auto; }
-.highlight { font-weight:700; color:var(--light); margin-top:10px; }
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200,16,46,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 40px; width: auto; object-fit: contain; }
 
-.stats { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:40px; }
-.stat { flex:1 1 200px; background:var(--card); padding:30px; border-radius:15px; box-shadow:0 0 20px var(--glow-dark); transition:0.4s; border: 1px solid transparent; }
-.stat:hover { transform:translateY(-8px); box-shadow:0 8px 40px rgba(0,0,0,0.8), 0 0 30px var(--accent); border-color: var(--accent); transition:0.3s; }
-.stat h3 { color:var(--accent); font-size:2.6rem; margin:0; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
-.stat span { display:block; color:var(--muted); font-size:1rem; margin-top:5px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.65);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--red);
+  transition: width 0.2s;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-links a:hover::after { width: 100%; }
 
-.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:50px; }
-.gallery img { width:100%; height:280px; object-fit:cover; border-radius:15px; transition:0.4s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-.gallery img:hover { transform: scale(1.05) rotate(1deg) translateY(-5px); box-shadow:0 0 60px rgba(212,175,55,0.9); transition:0.4s ease-out; border: 3px solid var(--highlight); }
+.nav-cta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--red-lt); box-shadow: 0 0 20px rgba(200,16,46,0.4); }
 
-form { background:var(--card); padding:35px; border-radius:15px; max-width:500px; margin:50px auto; display:flex; flex-direction:column; gap:18px; box-shadow:0 0 25px rgba(0,0,0,0.6); }
-input, textarea, select { padding:14px; border:1px solid #333; border-radius:10px; background:#222; color:white; font-size:1rem; box-shadow: inset 0 2px 6px rgba(0,0,0,0.5); transition: border-color 0.3s; }
-input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 8px var(--glow-dark), inset 0 2px 6px rgba(0,0,0,0.5); }
-form button { padding:16px; background:var(--highlight); border:none; color:#0b0b0b; border-radius:12px; font-weight:700; cursor:pointer; transition:0.4s; box-shadow:0 0 20px rgba(255,221,85,0.7); }
-form button:hover { transform:scale(1.05); box-shadow:0 0 40px rgba(255,221,85,1); }
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.review-carousel { display:flex; overflow-x:auto; gap:20px; margin-top:40px; transition:transform 0.8s ease; padding-bottom:10px; scroll-snap-type: x mandatory; }
-.review-card { flex:0 0 300px; background:var(--card); padding:22px; border-radius:12px; text-align:left; box-shadow:0 0 20px rgba(0,0,0,0.5); transition:0.3s; scroll-snap-align: start; cursor:pointer; border: 1px solid transparent; }
-.review-card:hover { transform:translateY(-8px); box-shadow:0 8px 40px rgba(0,0,0,0.8), 0 0 30px var(--glow-dark); border-color: var(--accent); }
-.stars { color:gold; margin-bottom:12px; }
-.review-name { font-weight:600; color:var(--accent); margin-bottom:6px; }
-.review-text { color:var(--muted); font-size:0.95rem; line-height:1.6; }
-.write-review-btn { padding:12px 24px; background:var(--accent); color:#0b0b0b; border:none; border-radius:10px; font-weight:700; cursor:pointer; margin-bottom:20px; transition:0.3s; }
-.write-review-btn:hover { transform:scale(1.05); background:var(--highlight); }
+/* Mobile overlay menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,8,8,0.97);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile-menu.open { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--cream);
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--red); }
+.mob-cta {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 700;
+  font-size: 1rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  background: var(--red);
+  color: white !important;
+  padding: 14px 40px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
 
-footer { padding:30px 10px; text-align:center; color:var(--muted); border-top:1px solid #222; background:#0a0a0a; margin-top:60px; }
+/* ============================================================
+   HERO
+   ============================================================ */
+#hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
 
-@keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
-@media(max-width:768px){
-.hero { flex-direction:column; text-align:center; }
-.hero img { width:85%; }
-.hero-text h1 { font-size:2.4rem; }
-nav a { margin-left:15px; }
+/* Left image column */
+.hero-img-col {
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  animation: heroZoom 8s ease-out forwards;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+/* Scanlines */
+.hero-img-col::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(200,16,46,0.03) 0px,
+    rgba(200,16,46,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+.hero-overlay-lr {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(8,8,8,0) 0%, rgba(8,8,8,0.3) 55%, rgba(8,8,8,0.88) 100%);
+  z-index: 1;
+}
+.hero-overlay-bt {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, #080808 0%, transparent 45%);
+  z-index: 2;
+}
+.hero-grain {
+  position: absolute; inset: 0;
+  z-index: 2;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Right content column */
+.hero-content-col {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 144px 60px 100px 48px;
+  position: relative;
+  z-index: 5;
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem,9vw,9rem);
+  color: var(--cream);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  clip-path: inset(0 100% 0 0);
+  animation: nameReveal 1s ease 0.3s forwards;
+}
+@keyframes nameReveal { to { clip-path: inset(0 0% 0 0); } }
+.hero-subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem,3vw,3.2rem);
+  color: var(--red);
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+.hero-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.hero-tag {
+  border: 1px solid rgba(200,16,46,0.4);
+  color: rgba(245,240,232,0.7);
+  padding: 5px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Buttons */
+.btn-primary {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  animation: pulseRed 3s infinite;
+  transition: box-shadow 0.2s;
+}
+.btn-primary:hover { box-shadow: 0 0 50px rgba(200,16,46,0.6); animation: none; }
+@keyframes pulseRed {
+  0%,100% { box-shadow: 0 0 20px rgba(200,16,46,0.3); }
+  50%      { box-shadow: 0 0 40px rgba(200,16,46,0.55); }
+}
+.btn-secondary {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(245,240,232,0.7);
+  padding: 14px 32px;
+  border: 1px solid rgba(245,240,232,0.25);
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--red); color: var(--red); }
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 6;
+}
+.scroll-indicator span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(200,16,46,0.5);
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: rgba(200,16,46,0.5);
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%,100% { transform: scaleY(1); opacity: 0.5; }
+  50%      { transform: scaleY(1.4); opacity: 1; }
+}
+
+/* ============================================================
+   FIGHT RECORD
+   ============================================================ */
+#record {
+  background: var(--charcoal);
+  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  padding: 100px 0 80px;
+  margin-top: -2px;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--red);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  transition: border-top-color 0.2s, box-shadow 0.2s;
+}
+/* Bottom corner brackets */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  bottom: 12px; left: 12px;
+  width: 12px; height: 12px;
+  border-bottom: 2px solid var(--red);
+  border-left: 2px solid var(--red);
+}
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 12px; right: 12px;
+  width: 12px; height: 12px;
+  border-bottom: 2px solid var(--red);
+  border-right: 2px solid var(--red);
+}
+.stat-card:hover { border-top-color: var(--red-lt); box-shadow: 0 0 24px rgba(200,16,46,0.12); }
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6rem;
+  color: var(--red);
+  line-height: 1;
+  display: block;
+}
+.stat-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ============================================================
+   ABOUT / DISCIPLINES
+   ============================================================ */
+#about {
+  background: var(--black);
+  padding: 120px 0;
+}
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img-wrap img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+/* Top-left corner accent */
+.about-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px;
+  width: 40px; height: 40px;
+  border-top: 3px solid var(--red);
+  border-left: 3px solid var(--red);
+  z-index: 1;
+}
+/* Bottom-right corner accent */
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; right: -10px;
+  width: 40px; height: 40px;
+  border-bottom: 3px solid var(--red);
+  border-right: 3px solid var(--red);
+  z-index: 1;
+}
+.about-copy { padding-top: 16px; }
+.about-copy .section-label { text-align: left; }
+.about-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem,4.5vw,4.5rem);
+  color: var(--cream);
+  line-height: 0.95;
+  margin-top: 10px;
+}
+.about-name .rai {
+  display: inline-block;
+  position: relative;
+}
+.about-name .rai::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--red);
+}
+.about-rule { width: 52px; height: 2px; background: var(--red); margin: 20px 0 28px; }
+.about-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.97rem;
+  line-height: 1.9;
+  color: rgba(245,240,232,0.65);
+}
+.about-body p + p { margin-top: 16px; }
+
+.disciplines-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 32px;
+}
+.disc-item { display: flex; align-items: center; gap: 12px; }
+.disc-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.disc-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+}
+.btn-outline-red {
+  display: inline-block;
+  margin-top: 36px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 12px 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-red:hover { background: var(--red); color: white; }
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+#gallery {
+  background: var(--charcoal);
+  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  padding: 100px 0 80px;
+  margin-top: -2px;
+}
+.gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.gal-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.gal-item:nth-child(1) { height: 480px; }
+.gal-item:nth-child(2),
+.gal-item:nth-child(3) { height: 340px; }
+.gal-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(1.1);
+  transition: filter 0.4s, transform 0.4s;
+  display: block;
+}
+.gal-overlay {
+  position: absolute; inset: 0;
+  background: var(--red-glow);
+  border: 1px solid rgba(200,16,46,0.4);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.gal-item:hover img { filter: grayscale(0) contrast(1.2); transform: scale(1.03); }
+.gal-item:hover .gal-overlay { opacity: 1; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+#reviews {
+  background: var(--black);
+  padding: 120px 0;
+}
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.t-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  padding: 36px 30px;
+  border-radius: 2px;
+  position: relative;
+}
+.t-card .big-q {
+  position: absolute;
+  top: 16px; right: 20px;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: rgba(200,16,46,0.08);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.t-stars { color: var(--red); font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 2px; }
+.t-text {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(245,240,232,0.72);
+  margin-bottom: 24px;
+}
+.t-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.t-role { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(245,240,232,0.35); margin-top: 4px; }
+
+/* ============================================================
+   CONTACT / BOOKING
+   ============================================================ */
+#contact {
+  background: var(--charcoal);
+  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  padding: 120px 0 100px;
+  margin-top: -2px;
+}
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-info .section-label { text-align: left; }
+.contact-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem,5vw,5rem);
+  color: var(--cream);
+  line-height: 0.92;
+  margin: 12px 0 20px;
+}
+.contact-heading .cred { color: var(--red); }
+.contact-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.97rem;
+  line-height: 1.9;
+  color: rgba(245,240,232,0.65);
+  margin-bottom: 36px;
+  max-width: 400px;
+}
+.contact-details { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
+.c-row { display: flex; align-items: center; gap: 16px; }
+.c-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.c-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  display: block;
+}
+.c-value { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--cream); }
+.c-value a { color: var(--cream); transition: color 0.2s; }
+.c-value a:hover { color: var(--red); }
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #25D366;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(37,211,102,0.25);
+  transition: box-shadow 0.2s;
+}
+.btn-whatsapp:hover { box-shadow: 0 0 44px rgba(37,211,102,0.5); }
+
+/* Form */
+.contact-form-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--red);
+  padding: 44px 36px;
+  border-radius: 2px;
+}
+.form-heading { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--cream); margin-bottom: 28px; }
+.form-group { margin-bottom: 14px; }
+.form-field {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--cream);
+  padding: 13px 16px;
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.form-field::placeholder { color: var(--muted); }
+.form-field:focus { border-color: var(--red); box-shadow: 0 0 0 2px rgba(200,16,46,0.15); }
+.form-field option { background: var(--card); color: var(--cream); }
+textarea.form-field { resize: vertical; min-height: 90px; }
+.btn-submit {
+  width: 100%;
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-submit:hover { background: var(--red-lt); box-shadow: 0 0 24px rgba(200,16,46,0.4); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--black);
+  border-top: 1px solid rgba(200,16,46,0.2);
+  padding: 40px 0 0;
+}
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-brand img { height: 32px; width: auto; object-fit: contain; }
+.footer-brand-text { display: flex; flex-direction: column; }
+.footer-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--cream); letter-spacing: 0.05em; line-height: 1.1; }
+.footer-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.footer-nav { display: flex; gap: 24px; list-style: none; }
+.footer-nav a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--red); }
+.footer-socials { display: flex; gap: 10px; }
+.soc-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.soc-btn.ig  { border: 1px solid var(--red); color: var(--red); }
+.soc-btn.wa  { border: 1px solid #25D366; color: #25D366; }
+.soc-btn.ph  { border: 1px solid var(--red); color: var(--red); }
+.soc-btn:hover { transform: scale(1.12); box-shadow: 0 0 12px rgba(200,16,46,0.3); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 20px 24px;
+  text-align: center;
+}
+.footer-bottom p { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); }
+
+/* ============================================================
+   SCROLL FADE-IN ANIMATIONS
+   ============================================================ */
+.fi {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fi.visible { opacity: 1; transform: translateY(0); }
+.fi.d1 { transition-delay: 0.1s; }
+.fi.d2 { transition-delay: 0.2s; }
+.fi.d3 { transition-delay: 0.3s; }
+.fi.d4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   RESPONSIVE — TABLET / MOBILE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-wrap img { aspect-ratio: 16/9; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gal-item:nth-child(1) { grid-column: span 2; height: 360px; }
+  .gal-item:nth-child(2),
+  .gal-item:nth-child(3) { height: 260px; }
+}
+
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  #hero { flex-direction: column; min-height: 100vh; }
+  .hero-img-col { width: 100%; height: 55vh; flex-shrink: 0; }
+  .hero-bg-img { position: absolute; }
+  .hero-content-col { width: 100%; padding: 44px 24px 80px; }
+  .hero-name { font-size: clamp(4rem,14vw,6rem); }
+
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  .footer-main { flex-direction: column; align-items: flex-start; }
+  .footer-nav { flex-wrap: wrap; gap: 14px; }
+}
+
+@media (max-width: 640px) {
+  .stat-grid { gap: 10px; }
+  .stat-number { font-size: 4rem; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gal-item:nth-child(1) { grid-column: span 1; height: 280px; }
+  .gal-item:nth-child(2),
+  .gal-item:nth-child(3) { height: 240px; }
+
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+  .disciplines-grid { grid-template-columns: 1fr; }
+
+  .contact-form-wrap { padding: 28px 20px; }
+
+  #record { clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%); }
+  #gallery { clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%); }
+  #contact { clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%); }
 }
 </style>
 </head>
 
 <body>
-<div id="scrollProgress"></div>
 
-<header>
-  <div class="logo-area">
-    <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/logo.jpg" alt="Santosh Rai logo" />
-    <div class="logo">Santosh Rai</div>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#record">Record</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<!-- =====================================================
+     MOBILE OVERLAY MENU
+     ===================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"   onclick="closeMob()">About</a>
+  <a href="#record"  onclick="closeMob()">Record</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="#contact" class="mob-cta" onclick="closeMob()">Book Training</a>
+</div>
 
-<section class="hero">
-  <div class="hero-text">
-    <p style="font-size: 1.5rem; color: var(--highlight); margin-bottom: 20px; font-style: italic; position: relative; z-index: 1;">Where Warriors Are Made</p>
-    <h1>Santosh Rai</h1>
-    <h2>Pro MMA Fighter | Uttar Pradesh</h2>
-    <p>With an iron will and relentless discipline, <strong>Santosh Rai</strong> dominates the MMA cage through raw power and refined skill. From kickboxing at the nationals to grappling excellence in AGP, he stands as one of India’s most promising fighters.</p>
-    <button class="highlight-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Training Session</button>
-  </div>
-  <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/mt.jpg" alt="Santosh Rai MMA Training" />
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/logo.jpg" alt="Santosh Rai">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Book Training</a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<section id="hero">
+  <!-- Left image -->
+  <div class="hero-img-col">
+    <img class="hero-bg-img"
+         src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/mt.jpg"
+         alt="Santosh Rai MMA Fighter">
+    <div class="hero-overlay-lr"></div>
+    <div class="hero-overlay-bt"></div>
+    <div class="hero-grain"></div>
+  </div>
+
+  <!-- Right content -->
+  <div class="hero-content-col">
+    <p class="hero-eyebrow">Pro MMA Fighter · Lucknow, UP</p>
+    <h1 class="hero-name">SANTOSH<br>RAI</h1>
+    <h2 class="hero-subtitle">WHERE WARRIORS ARE MADE</h2>
+    <div class="hero-tags">
+      <span class="hero-tag">Muay Thai</span>
+      <span class="hero-tag">Kickboxing</span>
+      <span class="hero-tag">Boxing</span>
+      <span class="hero-tag">BJJ</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book Training</a>
+      <a href="#record"  class="btn-secondary">View Record</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
-<section id="about" class="section">
-  <h2>About</h2>
-  <p>Santosh Rai is a professional MMA fighter from Lucknow, Uttar Pradesh, known for his aggressive striking, calculated ground game, and unstoppable spirit.</p>
-  <p class="highlight"><strong>Expert in Muay Thai, Kickboxing, Boxing, Brazilian Jiu-jitsu</strong></p>
-  <p class="highlight"><strong>Learn From The Best</strong></p>
+<!-- =====================================================
+     FIGHT RECORD
+     ===================================================== -->
+<section id="record">
+  <div class="container">
+    <p class="section-label fi">Professional Record</p>
+    <h2 class="section-heading fi d1">FIGHT RECORD</h2>
+    <div class="section-rule fi d2"></div>
+
+    <div class="stat-grid">
+      <div class="stat-card fi d1">
+        <span class="stat-number count" data-target="10">10</span>
+        <span class="stat-label">Wins</span>
+      </div>
+      <div class="stat-card fi d2">
+        <span class="stat-number count" data-target="0">0</span>
+        <span class="stat-label">Losses</span>
+      </div>
+      <div class="stat-card fi d3">
+        <span class="stat-number count" data-target="2">2</span>
+        <span class="stat-label">Draws</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="record" class="section">
-  <h2>Fight Record</h2>
-  <div class="stats">
-    <div class="stat"><h3 class="count" data-target="10">0</h3><span>Wins</span></div>
-    <div class="stat"><h3 class="count" data-target="0">0</h3><span>Loss</span></div>
-    <div class="stat"><h3 class="count" data-target="2">0</h3><span>Draws</span></div>
-  </div>
+<!-- =====================================================
+     ABOUT / DISCIPLINES
+     ===================================================== -->
+<section id="about">
+  <div class="about-grid">
+    <!-- Image -->
+    <div class="about-img-wrap fi">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/fs.jpg"
+           alt="Santosh Rai Fighter Stance">
+    </div>
+
+    <!-- Copy -->
+    <div class="about-copy">
+      <p class="section-label fi">The Fighter</p>
+      <h2 class="about-name fi d1">SANTOSH <span class="rai">RAI</span></h2>
+      <div class="about-rule fi d2"></div>
+
+      <div class="about-body fi d2">
+        <p>Santosh Rai is a professional MMA fighter from Lucknow, Uttar Pradesh — known for his aggressive striking, calculated ground game, and an unstoppable fighting spirit that has made him one of the most promising names in Indian MMA.</p>
+        <p>From competing at the national level in kickboxing to showcasing grappling excellence in AGP, Santosh brings the same iron discipline to every bout and every training session he leads.</p>
+      </div>
+
+      <div class="disciplines-grid fi d3">
+        <div class="disc-item">
+          <div class="disc-icon">🥊</div>
+          <span class="disc-label">Muay Thai</span>
+        </div>
+        <div class="disc-item">
+          <div class="disc-icon">🥋</div>
+          <span class="disc-label">Brazilian Jiu-Jitsu</span>
+        </div>
+        <div class="disc-item">
+          <div class="disc-icon">🤜</div>
+          <span class="disc-label">Kickboxing</span>
+        </div>
+        <div class="disc-item">
+          <div class="disc-icon">👊</div>
+          <span class="disc-label">Boxing</span>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-outline-red fi d4">TRAIN WITH SANTOSH →</a>
+    </div>
+  </div>
 </section>
 
-<section id="gallery" class="section">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/mt2.jpg" alt="MMA Training 1">
-    <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/fs.jpg" alt="MMA Fight Stance">
-    <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/gg.jpg" alt="Ground Grappling">
-  </div>
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+<section id="gallery">
+  <div class="container">
+    <p class="section-label fi">Visual Highlights</p>
+    <h2 class="section-heading fi d1">IN THE CAGE</h2>
+    <div class="section-rule fi d2"></div>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gal-item fi d1">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/mt2.jpg" alt="MMA Training">
+      <div class="gal-overlay"></div>
+    </div>
+    <div class="gal-item fi d2">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/fs.jpg" alt="Fighter Stance">
+      <div class="gal-overlay"></div>
+    </div>
+    <div class="gal-item fi d3">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/gg.jpg" alt="Ground Grappling">
+      <div class="gal-overlay"></div>
+    </div>
+  </div>
 </section>
 
-<section id="reviews" class="section">
-  <h2>Testimonials</h2>
-  <button class="write-review-btn" onclick="toggleReviewForm()">Write a Review</button>
+<!-- =====================================================
+     TESTIMONIALS
+     ===================================================== -->
+<section id="reviews">
+  <div class="container">
+    <p class="section-label fi">Student Voices</p>
+    <h2 class="section-heading fi d1">WHAT WARRIORS SAY</h2>
+    <div class="section-rule fi d2"></div>
+  </div>
 
-  <form id="reviewForm" style="display:none; flex-direction:column; gap:12px; margin-bottom:20px;">
-    <input type="text" id="reviewName" placeholder="Your Name" required>
-    <select id="reviewRating" required>
-      <option value="">Rating</option>
-      <option value="5">⭐⭐⭐⭐⭐</option>
-      <option value="4">⭐⭐⭐⭐</option>
-      <option value="3">⭐⭐⭐</option>
-      <option value="2">⭐⭐</option>
-      <option value="1">⭐</option>
-    </select>
-    <textarea id="reviewMsg" rows="3" placeholder="Write your review..." required></textarea>
-    <button type="button" onclick="submitReview()">Submit Review</button>
-  </form>
-
-  <div id="testimonial-carousel" class="review-carousel">
-    <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-name">Ravi Kumar</div><div class="review-text">Training with Santosh bhai changed my game completely! The precision and intensity are unmatched.</div></div>
-    <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-name">Amit Singh</div><div class="review-text">One of the most disciplined and motivating fighters I’ve ever met. A true inspiration for MMA aspirants.</div></div>
-    <div class="review-card"><div class="stars">⭐⭐⭐⭐</div><div class="review-name">Rahul Verma</div><div class="review-text">Sessions are intense but fun. Santosh bhai pushes you beyond your limits. Highly recommended!</div></div>
-  </div>
+  <div class="testimonials-grid">
+    <div class="t-card fi d1">
+      <div class="big-q">"</div>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Training with Santosh bhai changed my game completely! The precision and intensity are unmatched."</p>
+      <div class="t-name">Ravi Kumar</div>
+      <div class="t-role">Training Student · Lucknow</div>
+    </div>
+    <div class="t-card fi d2">
+      <div class="big-q">"</div>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"One of the most disciplined and motivating fighters I've ever met. A true inspiration for MMA aspirants."</p>
+      <div class="t-name">Amit Singh</div>
+      <div class="t-role">MMA Student · Uttar Pradesh</div>
+    </div>
+    <div class="t-card fi d3">
+      <div class="big-q">"</div>
+      <div class="t-stars">★★★★</div>
+      <p class="t-text">"Sessions are intense but fun. Santosh bhai pushes you beyond your limits. Highly recommended!"</p>
+      <div class="t-name">Rahul Verma</div>
+      <div class="t-role">Kickboxing Student · Lucknow</div>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
-  <h2>Book a Training Session</h2>
-  <form onsubmit="sendMessage(event)">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="phone" placeholder="Your Phone Number" required>
-    <textarea id="msg" rows="4" placeholder="Your Message or Training Goals" required></textarea>
-    <button type="submit"><i class="fab fa-whatsapp"></i> Book via WhatsApp</button>
-  </form>
-  <p style="margin-top:20px; font-size:1rem; display:flex; flex-direction:column; gap:8px;">
-    <span><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+916393290350" style="color:var(--accent);text-decoration:none;">+91 63932 90350</a></span>
-    <span><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:rai44165@gmail.com" style="color:var(--accent);text-decoration:none;">rai44165@gmail.com</a></span>
-    <span><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/wild_wolf_44165" target="_blank" style="color:var(--accent);text-decoration:none;">@wild_wolf_44165</a></span>
-  </p>
+<!-- =====================================================
+     CONTACT / BOOKING
+     ===================================================== -->
+<section id="contact">
+  <div class="contact-grid">
+    <!-- Left: info -->
+    <div class="contact-info">
+      <p class="section-label fi">Train With A Pro</p>
+      <h2 class="contact-heading fi d1">BOOK YOUR<br><span class="cred">SESSION</span></h2>
+      <p class="contact-body fi d2">Whether you're a complete beginner or a seasoned fighter looking to sharpen your edge — Santosh trains you with the same intensity he brings to the cage.</p>
+
+      <div class="contact-details fi d3">
+        <div class="c-row">
+          <div class="c-icon">📞</div>
+          <div>
+            <span class="c-label">Phone</span>
+            <div class="c-value"><a href="tel:+916393290350">+91 63932 90350</a></div>
+          </div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon">✉️</div>
+          <div>
+            <span class="c-label">Email</span>
+            <div class="c-value"><a href="mailto:rai44165@gmail.com">rai44165@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon">📸</div>
+          <div>
+            <span class="c-label">Instagram</span>
+            <div class="c-value"><a href="https://instagram.com/wild_wolf_44165" target="_blank" rel="noopener">@wild_wolf_44165</a></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/916393290350" target="_blank" rel="noopener" class="btn-whatsapp fi d4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        BOOK VIA WHATSAPP
+      </a>
+    </div>
+
+    <!-- Right: form -->
+    <div class="contact-form-wrap fi d2">
+      <h3 class="form-heading">SEND A MESSAGE</h3>
+      <form id="contactForm" onsubmit="sendWhatsApp(event)">
+        <div class="form-group">
+          <input type="text" id="fname" class="form-field" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="fphone" class="form-field" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <select id="finterest" class="form-field" required>
+            <option value="" disabled selected>Training Interest</option>
+            <option value="Muay Thai">Muay Thai</option>
+            <option value="Kickboxing">Kickboxing</option>
+            <option value="Boxing">Boxing</option>
+            <option value="Brazilian Jiu-Jitsu">Brazilian Jiu-Jitsu</option>
+            <option value="General MMA">General MMA</option>
+            <option value="All Disciplines">All Disciplines</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="fmessage" class="form-field" rows="3" placeholder="Your message or training goals..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">BOOK MY TRAINING SESSION</button>
+      </form>
+    </div>
+  </div>
 </section>
 
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 <footer>
-  &copy; 2025 Santosh Rai. All Rights Reserved.
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="https://raw.githubusercontent.com/shwetsrivastava2004-pixel/mma-images/refs/heads/main/logo.jpg" alt="Santosh Rai">
+      <div class="footer-brand-text">
+        <span class="footer-name">SANTOSH RAI</span>
+        <span class="footer-tagline">Pro MMA Fighter · Lucknow, UP</span>
+      </div>
+    </div>
+
+    <ul class="footer-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="footer-socials">
+      <a href="https://instagram.com/wild_wolf_44165" target="_blank" rel="noopener" class="soc-btn ig" aria-label="Instagram">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://wa.me/916393290350" target="_blank" rel="noopener" class="soc-btn wa" aria-label="WhatsApp">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="tel:+916393290350" class="soc-btn ph" aria-label="Phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Santosh Rai. All Rights Reserved.</p>
+  </div>
 </footer>
 
 <script>
-// Scroll progress
-function updateScrollProgress() {
-  const scrollProgress = document.getElementById('scrollProgress');
-  const totalHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollPosition = window.scrollY;
-  const progress = (scrollPosition / totalHeight) * 100;
-  scrollProgress.style.width = progress + '%';
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+function toggleMob() {
+  const menu = document.getElementById('mobileMenu');
+  const ham  = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  ham.classList.toggle('active');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
-window.addEventListener('scroll', updateScrollProgress);
-updateScrollProgress();
+function closeMob() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('active');
+  document.body.style.overflow = '';
+}
 
-// Reveal sections using IntersectionObserver
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-sections.forEach(section => observer.observe(section));
+/* ============================================================
+   SCROLL FADE-IN (IntersectionObserver)
+   ============================================================ */
+const fadeEls = document.querySelectorAll('.fi');
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      fadeObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+fadeEls.forEach(el => fadeObs.observe(el));
 
-// Animate counters when visible
+/* ============================================================
+   COUNT-UP ANIMATION
+   ============================================================ */
 const counters = document.querySelectorAll('.count');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const counter = entry.target;
-      const target = +counter.getAttribute('data-target');
-      let count = 0;
-      const step = target / 200;
-      const updateCount = () => {
-        count += step;
-        if(count < target){
-          counter.innerText = Math.ceil(count);
-          requestAnimationFrame(updateCount);
-        } else {
-          counter.innerText = target;
-        }
-      }
-      updateCount();
-      counterObserver.unobserve(counter);
-    }
-  });
+const countObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el     = e.target;
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const dur    = 1500;
+      const t0     = performance.now();
+      const step   = (ts) => {
+        const p    = Math.min((ts - t0) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(ease * target);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      };
+      requestAnimationFrame(step);
+      countObs.unobserve(el);
+    }
+  });
 }, { threshold: 0.5 });
-counters.forEach(counter => counterObserver.observe(counter));
+counters.forEach(c => countObs.observe(c));
 
-// WhatsApp booking
-function sendMessage(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const msg = document.getElementById('msg').value;
-  const waUrl = ⁠ https://wa.me/916393290350?text=Hi! My name is ${encodeURIComponent(name)}. Phone: ${encodeURIComponent(phone)}. Message: ${encodeURIComponent(msg)} ⁠;
-  window.open(waUrl, '_blank');
+/* ============================================================
+   WHATSAPP FORM SUBMIT
+   ============================================================ */
+function sendWhatsApp(e) {
+  e.preventDefault();
+  const name     = document.getElementById('fname').value.trim();
+  const phone    = document.getElementById('fphone').value.trim();
+  const interest = document.getElementById('finterest').value;
+  const msg      = document.getElementById('fmessage').value.trim();
+  let text = `Hi Santosh bhai! I want to book a training session.\n\n`;
+  text += `*Name:* ${name}\n`;
+  text += `*Phone:* ${phone}\n`;
+  text += `*Training Interest:* ${interest}\n`;
+  if (msg) text += `*Message:* ${msg}\n`;
+  window.open(`https://wa.me/916393290350?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Review form
-function toggleReviewForm(){
-  const form = document.getElementById('reviewForm');
-  form.style.display = (form.style.display === 'flex') ? 'none' : 'flex';
-}
-
-function submitReview(){
-  const name = document.getElementById('reviewName').value;
-  const rating = document.getElementById('reviewRating').value;
-  const msg = document.getElementById('reviewMsg').value;
-  if(!name || !rating || !msg) return alert('Please fill all fields');
-
-  const reviewContainer = document.getElementById('testimonial-carousel');
-  const div = document.createElement('div');
-  div.classList.add('review-card');
-  div.innerHTML = `<div class="stars">${'⭐'.repeat(rating)}</div>
-                   <div class="review-name">${name}</div>
-                   <div class="review-text">${msg}</div>`;
-  reviewContainer.prepend(div);
-
-  document.getElementById('reviewForm').reset();
-  document.getElementById('reviewForm').style.display = 'none';
-  alert('Thank you for your review!');
-}
+/* ============================================================
+   ACTIVE NAV HIGHLIGHT ON SCROLL
+   ============================================================ */
+const navAs = document.querySelectorAll('.nav-links a');
+const secIds = ['about','record','gallery','reviews','contact'];
+const secEls = secIds.map(id => document.getElementById(id)).filter(Boolean);
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navAs.forEach(a => a.classList.remove('active'));
+      const match = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (match) match.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+secEls.forEach(s => navObs.observe(s));
 </script>
 
 </body>
