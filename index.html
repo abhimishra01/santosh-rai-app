@@ -637,18 +637,16 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 .gal-item {
   position: relative;
   overflow: hidden;
   border-radius: 2px;
+  height: 400px;
 }
-.gal-item:nth-child(1) { height: 480px; }
-.gal-item:nth-child(2),
-.gal-item:nth-child(3) { height: 340px; }
 .gal-item img {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -673,13 +671,23 @@ img { display: block; max-width: 100%; }
   background: var(--black);
   padding: 120px 0;
 }
-.testimonials-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+.marquee-outer {
+  overflow: hidden;
+  width: 100%;
+  padding: 8px 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
   gap: 24px;
+  width: max-content;
+  animation: marquee-scroll 12s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .t-card {
   background: var(--card);
@@ -688,6 +696,8 @@ img { display: block; max-width: 100%; }
   padding: 36px 30px;
   border-radius: 2px;
   position: relative;
+  width: 380px;
+  flex-shrink: 0;
 }
 .t-card .big-q {
   position: absolute;
@@ -945,7 +955,7 @@ a.footer-credit:hover { color: var(--cream); }
   .hero-content-col { width: 100%; padding: 44px 24px 80px; }
   .hero-name { font-size: clamp(4rem,14vw,6rem); }
 
-  .testimonials-grid { grid-template-columns: 1fr; }
+
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
 
   .footer-main { flex-direction: column; align-items: flex-start; }
@@ -1160,27 +1170,52 @@ a.footer-credit:hover { color: var(--cream); }
     <div class="section-rule fi d2"></div>
   </div>
 
-  <div class="testimonials-grid">
-    <div class="t-card fi d1">
-      <div class="big-q">"</div>
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text">"Training with Santosh bhai changed my game completely! The precision and intensity are unmatched."</p>
-      <div class="t-name">Ravi Kumar</div>
-      <div class="t-role">Training Student · Lucknow</div>
-    </div>
-    <div class="t-card fi d2">
-      <div class="big-q">"</div>
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text">"One of the most disciplined and motivating fighters I've ever met. A true inspiration for MMA aspirants."</p>
-      <div class="t-name">Amit Singh</div>
-      <div class="t-role">MMA Student · Uttar Pradesh</div>
-    </div>
-    <div class="t-card fi d3">
-      <div class="big-q">"</div>
-      <div class="t-stars">★★★★</div>
-      <p class="t-text">"Sessions are intense but fun. Santosh bhai pushes you beyond your limits. Highly recommended!"</p>
-      <div class="t-name">Rahul Verma</div>
-      <div class="t-role">Kickboxing Student · Lucknow</div>
+  <div class="marquee-outer">
+    <div class="marquee-track">
+      <!-- Original set -->
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Training with Santosh bhai changed my game completely! The precision and intensity are unmatched."</p>
+        <div class="t-name">Ravi Kumar</div>
+        <div class="t-role">Training Student · Lucknow</div>
+      </div>
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"One of the most disciplined and motivating fighters I've ever met. A true inspiration for MMA aspirants."</p>
+        <div class="t-name">Amit Singh</div>
+        <div class="t-role">MMA Student · Uttar Pradesh</div>
+      </div>
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★</div>
+        <p class="t-text">"Sessions are intense but fun. Santosh bhai pushes you beyond your limits. Highly recommended!"</p>
+        <div class="t-name">Rahul Verma</div>
+        <div class="t-role">Kickboxing Student · Lucknow</div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Training with Santosh bhai changed my game completely! The precision and intensity are unmatched."</p>
+        <div class="t-name">Ravi Kumar</div>
+        <div class="t-role">Training Student · Lucknow</div>
+      </div>
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"One of the most disciplined and motivating fighters I've ever met. A true inspiration for MMA aspirants."</p>
+        <div class="t-name">Amit Singh</div>
+        <div class="t-role">MMA Student · Uttar Pradesh</div>
+      </div>
+      <div class="t-card">
+        <div class="big-q">"</div>
+        <div class="t-stars">★★★★</div>
+        <p class="t-text">"Sessions are intense but fun. Santosh bhai pushes you beyond your limits. Highly recommended!"</p>
+        <div class="t-name">Rahul Verma</div>
+        <div class="t-role">Kickboxing Student · Lucknow</div>
+      </div>
     </div>
   </div>
 </section>
