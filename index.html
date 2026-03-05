@@ -895,9 +895,19 @@ footer {
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.05);
   padding: 20px 24px;
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.footer-bottom p { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); }
+.footer-bottom p, .footer-bottom a.footer-credit {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+a.footer-credit { text-decoration: none; transition: color 0.2s; }
+a.footer-credit:hover { color: var(--cream); }
 
 /* ============================================================
    SCROLL FADE-IN ANIMATIONS
@@ -1282,6 +1292,7 @@ footer {
 
   <div class="footer-bottom">
     <p>© 2026 Santosh Rai. All Rights Reserved.</p>
+    <a href="https://bingemind.com" target="_blank" rel="noopener noreferrer" class="footer-credit">Built and managed by Bingemind Agency</a>
   </div>
 </footer>
 
